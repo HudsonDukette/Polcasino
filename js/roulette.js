@@ -162,7 +162,33 @@ betButtons.forEach(button => {
   });
 });
 
-spinBtn.addEventListener("click", () => {
+async function requestSpinFromServer() {
+  const url = 'http://127.0.0.1:5000/spin';
+  try {
+    const controller = new AbortController();
+    const timeout = setTimeout(() => controller.abort(), 1500);
+    const res = await fetch(url, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({}),
+      signal: controller.signal
+    });
+    clearTimeout(timeout);
+    if (res.ok) {
+      const data = await res.json();
+      if (typeof data.resultIndex === 'number') return data.resultIndex;
+      if (typeof data.number === 'number') {
+        const idx = numbers.indexOf(data.number);
+        if (idx >= 0) return idx;
+      }
+    }
+  } catch (err) {
+    // server unreachable or timed out — fall back to local
+  }
+  return Math.floor(Math.random() * numbers.length);
+}
+
+spinBtn.addEventListener("click", async () => {
   const betAmount = Number(betAmountInput.value || 0);
   if (spinning) return;
   if (!selectedBet) {
@@ -180,7 +206,7 @@ spinBtn.addEventListener("click", () => {
 
   spinning = true;
   messageEl.textContent = "Spinning...";
-  const resultIndex = Math.floor(Math.random() * numbers.length);
+  const resultIndex = await requestSpinFromServer();
   animateSpin(resultIndex);
 });
 

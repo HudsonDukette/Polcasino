@@ -21,9 +21,6 @@
     <button class="nav-btn" data-view="leaderboard">
       <img src="assets/icons/leaderboard.svg" class="icon"> Leaderboard
     </button>
-    <button class="nav-btn" data-view="profile">
-      <img src="assets/icons/profile.svg" class="icon"> Profile
-    </button>
   </div>
   <div class="account">
     <div class="pfp"></div>
@@ -41,7 +38,7 @@
         <span class="banner">Global Pool Active</span>
         <h1>Play against the <span class="highlight">Global Economy</span></h1>
         <p>Every bet shapes the pool. When you lose, the pool grows. When you win, you take from the community. How much will you claim?</p>
-        <button class="cta-btn">Play Now</button>
+        <button id="playNowBtn" class="cta-btn">Play Now</button>
       </div>
       <div class="hero-panel">
         <div class="panel-label">CURRENT GLOBAL POOL</div>
@@ -97,42 +94,76 @@
   <div id="games" class="view hidden">
     <div class="section-header page-header">
       <div>
-        <h2>Neon Roulette</h2>
-        <p class="section-copy">Spin the neon wheel in a live casino layout. Place bets, watch the ball tumble, and chase bright wins.</p>
+        <h2>Games</h2>
+        <p class="section-copy">Choose a table and play inside the neon pool. Each game has its own tab and distinct visuals.</p>
       </div>
       <button class="cta-btn">Bet History</button>
     </div>
 
-    <div class="casino-grid">
-      <div class="wheel-card">
-        <div class="wheel-head">
-          <img src="assets/icons/games.svg" class="card-icon" alt="Roulette icon">
-          <div>
-            <div class="panel-tag">Live Table</div>
-            <h3>Neon Wheel</h3>
+    <div class="game-tabs">
+      <button class="game-tab-btn active" data-tab="roulette">Roulette</button>
+      <button class="game-tab-btn" data-tab="plinko">Plinko</button>
+      <button class="game-tab-btn" data-tab="stake">Stake & Win</button>
+    </div>
+
+    <div class="game-tab-content">
+      <div id="tab-roulette" class="game-tab active">
+        <div class="casino-grid">
+          <div class="wheel-card">
+            <div class="wheel-head">
+              <img src="assets/icons/roulette_big.svg" class="card-icon" alt="Roulette icon">
+              <div>
+                <div class="panel-tag">Live Table</div>
+                <h3>Neon Wheel</h3>
+              </div>
+            </div>
+            <div class="wheel-frame">
+              <canvas id="wheelCanvas" width="520" height="520"></canvas>
+              <div class="arrow">
+                <span>▲</span>
+                <div class="arrow-label">Landing</div>
+              </div>
+            </div>
           </div>
-        </div>
-        <div class="wheel-frame">
-          <canvas id="wheelCanvas" width="520" height="520"></canvas>
-          <div class="arrow">
-            <span>▲</span>
-            <div class="arrow-label">Landing</div>
+
+          <div class="controls-panel">
+            <div class="balance">Balance: $<span id="balance">1,000</span></div>
+            <div class="bet-buttons">
+              <button class="bet-btn red" data-color="red">Red</button>
+              <button class="bet-btn black" data-color="black">Black</button>
+              <button class="bet-btn green" data-color="green">Green</button>
+            </div>
+            <input type="number" id="betAmount" placeholder="Bet amount" class="pop-input">
+            <button id="spinBtn" class="pop-btn">Spin</button>
+            <div class="status-panel">
+              <div class="result">Result: <span id="result">-</span></div>
+              <div class="message" id="message">Place a bet and spin to win.</div>
+            </div>
           </div>
         </div>
       </div>
 
-      <div class="controls-panel">
-        <div class="balance">Balance: $<span id="balance">1,000</span></div>
-        <div class="bet-buttons">
-          <button class="bet-btn red" data-color="red">Red</button>
-          <button class="bet-btn black" data-color="black">Black</button>
-          <button class="bet-btn green" data-color="green">Green</button>
+      <div id="tab-plinko" class="game-tab hidden">
+        <div class="placeholder-card">
+          <div class="card-head">
+            <img src="assets/icons/plinko.svg" class="card-icon" alt="Plinko">
+            <div class="card-title">Drop Plinko</div>
+          </div>
+          <p class="card-value">Physics-based drop game. Placeholder UI with bright neon pegs.</p>
+          <div class="visual-plate plinko-visual"></div>
+          <button class="card-btn">Play Plinko →</button>
         </div>
-        <input type="number" id="betAmount" placeholder="Bet amount" class="pop-input">
-        <button id="spinBtn" class="pop-btn">Spin</button>
-        <div class="status-panel">
-          <div class="result">Result: <span id="result">-</span></div>
-          <div class="message" id="message">Place a bet and spin to win.</div>
+      </div>
+
+      <div id="tab-stake" class="game-tab hidden">
+        <div class="placeholder-card">
+          <div class="card-head">
+            <img src="assets/icons/stake.svg" class="card-icon" alt="Stake">
+            <div class="card-title">Stake & Win</div>
+          </div>
+          <p class="card-value">Stake in the community pool. Placeholder UI with neon graphs and stats.</p>
+          <div class="visual-plate stake-visual"></div>
+          <button class="card-btn">Join Pool →</button>
         </div>
       </div>
     </div>
