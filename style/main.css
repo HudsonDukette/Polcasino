@@ -1,0 +1,54 @@
+@font-face {
+  font-family: 'Poppins';
+  src: url('../assets/fonts/Poppins-Regular.woff2') format('woff2'),
+       url('../assets/fonts/Poppins-Bold.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+}
+
+body {
+  margin: 0;
+  font-family: 'Poppins', Arial, sans-serif;
+  background: radial-gradient(circle at top, #020617, #000000);
+  color: #e2e8f0;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 30px;
+  border-bottom: 2px solid #22c55e;
+}
+
+.logo { font-weight: bold; font-size: 20px; color: #22c55e; }
+
+.menu, .account { display: flex; align-items: center; }
+
+.nav-btn {
+  margin-left: 15px;
+  padding: 8px 15px;
+  border-radius: 10px;
+  border: 2px solid #22c55e;
+  background: black;
+  color: #22c55e;
+  cursor: pointer;
+  box-shadow: 0 0 10px #22c55e;
+  transition: all 0.2s ease;
+}
+
+.nav-btn:hover {
+  box-shadow: 0 0 20px #22c55e, 0 0 40px #22c55e;
+  transform: scale(1.05);
+}
+
+.pfp {
+  width: 35px; height: 35px;
+  border-radius: 50%; background: #111; margin-right: 10px;
+}
+
+.view { padding: 20px; }
+.hidden { display: none; }
+
+/* ICONS */
+.icon { width: 18px; height: 18px; margin-right: 5px; vertical-align: middle; }

@@ -1,20 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Roulette Casino</title>
-  <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<title>Pool Casino</title>
+<link rel="stylesheet" href="style/main.css">
+<link rel="stylesheet" href="style/dashboard.css">
+<link rel="stylesheet" href="style/roulette.css">
 </head>
 <body>
-
-<!-- NAVBAR -->
 <div class="navbar">
-  <div class="logo">🎰 Pool Casino</div>
+  <div class="logo">POOL CASINO</div>
   <div class="menu">
-    <button class="nav-btn">Dashboard</button>
-    <button class="nav-btn">Games</button>
-    <button class="nav-btn">Leaderboard</button>
-    <button class="nav-btn">Profile</button>
+    <button class="nav-btn" data-view="dashboard">
+      <img src="assets/icons/dashboard.svg" class="icon"> Dashboard
+    </button>
+    <button class="nav-btn" data-view="games">
+      <img src="assets/icons/games.svg" class="icon"> Games
+    </button>
+    <button class="nav-btn" data-view="leaderboard">
+      <img src="assets/icons/leaderboard.svg" class="icon"> Leaderboard
+    </button>
+    <button class="nav-btn" data-view="profile">
+      <img src="assets/icons/profile.svg" class="icon"> Profile
+    </button>
   </div>
   <div class="account">
     <div class="pfp"></div>
@@ -23,41 +31,37 @@
   </div>
 </div>
 
-<h1>Roulette</h1>
-
-<div class="main-content">
-  <!-- WHEEL LEFT -->
-  <div class="wheel-wrapper">
-    <div class="arrow">▲</div>
-    <canvas id="wheelCanvas" width="400" height="400"></canvas>
+<div id="views">
+  <!-- DASHBOARD -->
+  <div id="dashboard" class="view">
+    <h1>Dashboard</h1>
+    <div class="dashboard-cards">
+      <div class="card">Global Pool: $0</div>
+      <div class="card">Featured Games</div>
+      <div class="card">Recent Wins</div>
+      <div class="card">Biggest Bet & Win</div>
+    </div>
   </div>
 
-  <!-- BET CONTROLS RIGHT -->
-  <div class="controls-panel">
-    <div class="balance">
-      Balance: $<span id="balance">1000</span>
-    </div>
+  <!-- GAMES (default: Roulette) -->
+  <div id="games" class="view hidden">
+    <h1>Games</h1>
+    <div id="rouletteGame"></div>
+  </div>
 
-    <div class="bet-buttons">
-      <button class="bet-btn" data-color="red">Red</button>
-      <button class="bet-btn" data-color="black">Black</button>
-      <button class="bet-btn" data-color="green">Green</button>
-      <button class="bet-btn" data-color="even">Even</button>
-      <button class="bet-btn" data-color="odd">Odd</button>
-    </div>
+  <div id="leaderboard" class="view hidden">
+    <h1>Leaderboard</h1>
+    <p>Placeholder content</p>
+  </div>
 
-    <input id="betAmount" type="number" placeholder="Bet Amount" class="pop-input">
-
-    <button id="spinBtn">Spin</button>
-
-    <div class="result">
-      Result: <span id="result">-</span>
-    </div>
-
-    <div class="message" id="message"></div>
+  <div id="profile" class="view hidden">
+    <h1>Profile</h1>
+    <p>Placeholder content</p>
   </div>
 </div>
 
-<script src="script.js"></script>
+<script src="js/main.js"></script>
+<script src="js/dashboard.js"></script>
+<script src="js/roulette.js"></script>
 </body>
 </html>

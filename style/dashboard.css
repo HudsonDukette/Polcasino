@@ -1,0 +1,25 @@
+.dashboard-cards {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  margin-top: 20px;
+}
+
+.card {
+  flex: 1 1 200px;
+  margin: 10px;
+  padding: 20px;
+  border: 2px solid #22c55e;
+  border-radius: 15px;
+  background: black;
+  text-align: center;
+  font-size: 18px;
+  color: #22c55e;
+  box-shadow: 0 0 10px #22c55e;
+  transition: all 0.2s ease;
+}
+
+.card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 20px #22c55e, 0 0 40px #22c55e;
+}

@@ -1,0 +1,21 @@
+.wheel-wrapper { position: relative; margin: 20px auto; }
+.arrow { position: absolute; top: -20px; left: 50%; transform: translateX(-50%); font-size: 28px; color: white; text-shadow: 0 0 10px white; }
+
+.controls-panel { display: flex; flex-direction: column; align-items: center; margin-top: 20px; }
+
+.bet-btn {
+  margin: 5px;
+  padding: 10px 15px;
+  border-radius: 10px;
+  border: 2px solid;
+  color: white;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  background: black;
+}
+
+.bet-btn.red { border-color: red; color: red; }
+.bet-btn.black { border-color: black; color: black; }
+.bet-btn.green { border-color: green; color: green; }
+
+.bet-btn:hover { transform: scale(1.1); box-shadow: 0 0 20px currentColor, 0 0 40px currentColor; }
