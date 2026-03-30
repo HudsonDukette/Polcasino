@@ -31,6 +31,35 @@ navButtons.forEach(btn => {
   btn.addEventListener("click", () => setView(btn.dataset.view));
 });
 
+// Dropdown behavior for navbar
+const dropdownToggles = document.querySelectorAll('.nav-item.has-dropdown .dropdown-toggle');
+dropdownToggles.forEach(btn => {
+  btn.addEventListener('click', (e) => {
+    e.stopPropagation();
+    const navItem = btn.closest('.nav-item');
+    navItem.classList.toggle('open');
+    // navigate to games view when toggling
+    setView(btn.dataset.view || 'games');
+  });
+});
+
+// Close dropdowns when clicking outside
+document.addEventListener('click', (e) => {
+  if (!e.target.closest('.nav-item.has-dropdown')) {
+    document.querySelectorAll('.nav-item.has-dropdown.open').forEach(n => n.classList.remove('open'));
+  }
+});
+
+// Dropdown item placeholders
+document.querySelectorAll('.dropdown-item').forEach(item => {
+  item.addEventListener('click', (e) => {
+    e.preventDefault();
+    e.stopPropagation();
+    alert(item.textContent + ' — Coming soon');
+    document.querySelectorAll('.nav-item.has-dropdown.open').forEach(n => n.classList.remove('open'));
+  });
+});
+
 // Open profile from avatar / username
 if (pfp) pfp.addEventListener('click', () => setView('profile'));
 if (usernameLabel) usernameLabel.addEventListener('click', () => setView('profile'));

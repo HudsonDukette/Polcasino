@@ -15,11 +15,23 @@
     <button class="nav-btn" data-view="dashboard">
       <img src="assets/icons/dashboard.svg" class="icon"> Dashboard
     </button>
-    <button class="nav-btn" data-view="games">
-      <img src="assets/icons/games.svg" class="icon"> Games
-    </button>
+
+    <div class="nav-item has-dropdown">
+      <button class="nav-btn dropdown-toggle" data-view="games">
+        <img src="assets/icons/games.svg" class="icon"> Games
+      </button>
+      <div class="dropdown">
+        <div class="dropdown-item">Multiplayer — Coming Soon</div>
+        <div class="dropdown-item">Player-Owned Casinos — Coming Soon</div>
+      </div>
+    </div>
+
     <button class="nav-btn" data-view="leaderboard">
       <img src="assets/icons/leaderboard.svg" class="icon"> Leaderboard
+    </button>
+
+    <button class="nav-btn" data-view="profile">
+      <img src="assets/icons/profile.svg" class="icon"> Profile
     </button>
   </div>
   <div class="account">
@@ -81,12 +93,11 @@
         <button class="card-btn">Play Game →</button>
       </div>
     </div>
-
-    <div class="dashboard-cards">
-      <div class="card">Global Pool: $999,646,253</div>
-      <div class="card">Recent Wins: $128,400</div>
-      <div class="card">Top Players</div>
-      <div class="card">Weekly Return</div>
+    <div class="leaderboard-table">
+      <div class="leaderboard-row"><div>#1 — NeonKing</div><div>$820,400</div></div>
+      <div class="leaderboard-row"><div>#2 — BrightBet</div><div>$420,120</div></div>
+      <div class="leaderboard-row"><div>#3 — LuckyStar</div><div>$298,700</div></div>
+      <div class="leaderboard-row"><div>#4 — PoolPro</div><div>$184,200</div></div>
     </div>
   </div>
 
@@ -123,6 +134,7 @@
                 <span>▲</span>
                 <div class="arrow-label">Landing</div>
               </div>
+              <div class="ball-placeholder" aria-hidden="true"></div>
             </div>
           </div>
 
@@ -166,6 +178,24 @@
           <button class="card-btn">Join Pool →</button>
         </div>
       </div>
+
+      <div class="all-games-grid">
+        <div class="game-tile">
+          <img src="assets/icons/roulette_big.svg" class="tile-icon">
+          <div class="tile-title">Neon Roulette</div>
+        </div>
+        <div class="game-tile">
+          <img src="assets/icons/plinko.svg" class="tile-icon">
+          <div class="tile-title">Drop Plinko</div>
+        </div>
+        <div class="game-tile">
+          <img src="assets/icons/stake.svg" class="tile-icon">
+          <div class="tile-title">Stake & Win</div>
+        </div>
+        <div class="game-tile">
+          <div class="tile-title">More games coming soon</div>
+        </div>
+      </div>
     </div>
   </div>
 
@@ -204,6 +234,16 @@
         <p class="section-copy">Your neon account details and current status inside the pool casino.</p>
       </div>
       <button class="cta-btn">Edit Profile</button>
+    </div>
+    <div class="profile-main">
+      <div class="profile-left">
+        <div class="pfp pfp-large"></div>
+        <div class="profile-username">NeonPlayer</div>
+        <div class="profile-actions"><button class="card-btn">Edit</button></div>
+      </div>
+      <div class="profile-right">
+        <div class="profile-desc">Member since: <strong>2026</strong><br>Level: <strong>Emerald</strong></div>
+      </div>
     </div>
     <div class="dashboard-cards">
       <div class="card">
