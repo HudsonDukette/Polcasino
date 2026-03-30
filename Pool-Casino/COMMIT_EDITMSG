@@ -1,0 +1,10 @@
+Add new casino games with improved interfaces and mechanics
+
+Implements backend API endpoints and frontend components for three new casino games: Pyramid Climb, Ice Break, and Advanced Wheel, including session-based game state management, updated UI designs, and bug fixes for payout calculations and game logic.
+
+Replit-Commit-Author: Agent
+Replit-Commit-Session-Id: bd91b846-5ca3-4150-a3bd-4ac01861fb0e
+Replit-Commit-Checkpoint-Type: full_checkpoint
+Replit-Commit-Event-Id: 02c0933e-f2b0-4d84-ad20-6b41a904c2c9
+Replit-Commit-Screenshot-Url: https://storage.googleapis.com/screenshot-production-us-central1/b880271f-6686-4c58-918f-732bf4a51358/bd91b846-5ca3-4150-a3bd-4ac01861fb0e/7NEraK6
+Replit-Helium-Checkpoint-Created: true
