@@ -13,6 +13,10 @@
   Balance: $<span id="balance">1000</span>
 </div>
 
+<div class="wheel-container">
+  <div class="wheel" id="wheel">🎡</div>
+</div>
+
 <div class="bet-controls">
   <input type="number" id="betAmount" placeholder="Bet amount">
   
@@ -23,7 +27,7 @@
     <option value="odd">Odd</option>
   </select>
 
-  <button onclick="spin()">Spin</button>
+  <button id="spinBtn" onclick="spin()">Spin</button>
 </div>
 
 <div class="result">

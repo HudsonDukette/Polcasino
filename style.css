@@ -1,47 +1,76 @@
 body {
-  background: #0f172a;
-  color: white;
+  background: radial-gradient(circle at top, #020617, #000000);
+  color: #e2e8f0;
   font-family: Arial;
   text-align: center;
   padding: 40px;
 }
 
+/* Title */
 h1 {
-  margin-bottom: 20px;
+  color: #22c55e;
+  text-shadow: 0 0 10px #22c55e, 0 0 30px #22c55e;
 }
 
+/* Balance */
 .balance {
   font-size: 24px;
   margin-bottom: 20px;
+  color: #38bdf8;
 }
 
-.bet-controls {
-  margin-bottom: 20px;
+/* Wheel */
+.wheel-container {
+  margin: 30px auto;
+  width: 120px;
+  height: 120px;
 }
 
+.wheel {
+  font-size: 80px;
+  transition: transform 3s cubic-bezier(.17,.67,.83,.67);
+}
+
+/* Controls */
 input, select, button {
   padding: 10px;
   margin: 5px;
-  border-radius: 8px;
+  border-radius: 10px;
   border: none;
 }
 
+/* Neon button */
 button {
   background: #22c55e;
-  color: white;
+  color: black;
+  box-shadow: 0 0 10px #22c55e, 0 0 20px #22c55e;
   cursor: pointer;
 }
 
-button:hover {
-  background: #16a34a;
+button:disabled {
+  background: #555;
+  box-shadow: none;
+  cursor: not-allowed;
 }
 
+/* Result */
 .result {
   font-size: 28px;
   margin-top: 20px;
 }
 
+/* Win/Loss text */
 .message {
   margin-top: 15px;
-  font-size: 20px;
+  font-size: 22px;
+}
+
+.win {
+  color: #22c55e;
+  text-shadow: 0 0 10px #22c55e;
+}
+
+.lose {
+  color: #ef4444;
+  text-shadow: 0 0 10px #ef4444;
 }
