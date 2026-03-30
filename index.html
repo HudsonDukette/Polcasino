@@ -43,10 +43,25 @@
     </div>
   </div>
 
-  <!-- GAMES (default: Roulette) -->
+  <!-- GAMES -->
   <div id="games" class="view hidden">
     <h1>Games</h1>
-    <div id="rouletteGame"></div>
+    <div class="roulette-wrapper">
+      <canvas id="wheelCanvas" width="500" height="500"></canvas>
+      <div class="arrow">▲</div>
+      <div class="controls-panel">
+        <div class="balance">Balance: $<span id="balance">1000</span></div>
+        <div class="bet-buttons">
+          <button class="bet-btn red" data-color="red">Red</button>
+          <button class="bet-btn black" data-color="black">Black</button>
+          <button class="bet-btn green" data-color="green">Green</button>
+        </div>
+        <input type="number" id="betAmount" placeholder="Bet Amount" class="pop-input">
+        <button id="spinBtn" class="pop-btn">Spin</button>
+        <div class="result">Result: <span id="result">-</span></div>
+        <div class="message" id="message"></div>
+      </div>
+    </div>
   </div>
 
   <div id="leaderboard" class="view hidden">
