@@ -71,6 +71,12 @@
   box-shadow: 0 0 18px currentColor, 0 0 32px currentColor;
 }
 
+.bet-btn.active {
+  box-shadow: 0 0 22px currentColor, 0 0 40px currentColor;
+  transform: translateY(-1px) scale(1.03);
+  background: rgba(255, 255, 255, 0.08);
+}
+
 .pop-input {
   width: 100%;
   padding: 14px 16px;

@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Pool Casino</title>
 <link rel="stylesheet" href="style/main.css">
 <link rel="stylesheet" href="style/dashboard.css">
@@ -26,6 +27,7 @@
   </div>
   <div class="account">
     <div class="pfp"></div>
+    <span id="usernameLabel" class="username-label hidden">NeonPlayer</span>
     <button id="loginBtn" class="nav-btn">Log In</button>
     <button id="signupBtn" class="nav-btn">Sign Up</button>
   </div>
@@ -93,33 +95,103 @@
 
   <!-- GAMES -->
   <div id="games" class="view hidden">
-    <h1>Games</h1>
-    <div class="roulette-wrapper">
-      <canvas id="wheelCanvas" width="500" height="500"></canvas>
-      <div class="arrow">▲</div>
+    <div class="section-header page-header">
+      <div>
+        <h2>Neon Roulette</h2>
+        <p class="section-copy">Spin the neon wheel in a live casino layout. Place bets, watch the ball tumble, and chase bright wins.</p>
+      </div>
+      <button class="cta-btn">Bet History</button>
+    </div>
+
+    <div class="casino-grid">
+      <div class="wheel-card">
+        <div class="wheel-head">
+          <img src="assets/icons/games.svg" class="card-icon" alt="Roulette icon">
+          <div>
+            <div class="panel-tag">Live Table</div>
+            <h3>Neon Wheel</h3>
+          </div>
+        </div>
+        <div class="wheel-frame">
+          <canvas id="wheelCanvas" width="520" height="520"></canvas>
+          <div class="arrow">
+            <span>▲</span>
+            <div class="arrow-label">Landing</div>
+          </div>
+        </div>
+      </div>
+
       <div class="controls-panel">
-        <div class="balance">Balance: $<span id="balance">1000</span></div>
+        <div class="balance">Balance: $<span id="balance">1,000</span></div>
         <div class="bet-buttons">
           <button class="bet-btn red" data-color="red">Red</button>
           <button class="bet-btn black" data-color="black">Black</button>
           <button class="bet-btn green" data-color="green">Green</button>
         </div>
-        <input type="number" id="betAmount" placeholder="Bet Amount" class="pop-input">
+        <input type="number" id="betAmount" placeholder="Bet amount" class="pop-input">
         <button id="spinBtn" class="pop-btn">Spin</button>
-        <div class="result">Result: <span id="result">-</span></div>
-        <div class="message" id="message"></div>
+        <div class="status-panel">
+          <div class="result">Result: <span id="result">-</span></div>
+          <div class="message" id="message">Place a bet and spin to win.</div>
+        </div>
       </div>
     </div>
   </div>
 
   <div id="leaderboard" class="view hidden">
-    <h1>Leaderboard</h1>
-    <p>Placeholder content</p>
+    <div class="section-header page-header">
+      <div>
+        <h2>Leaderboard</h2>
+        <p class="section-copy">Top players on the pool leaderboard. These are the biggest winners and highest rollers.</p>
+      </div>
+      <button class="cta-btn">Refresh</button>
+    </div>
+    <div class="dashboard-cards">
+      <div class="card">
+        <div class="card-head"><img src="assets/icons/leaderboard.svg" class="card-icon" alt="Top player"><div class="card-title">Top Streak</div></div>
+        <div class="card-value">14 wins</div>
+      </div>
+      <div class="card">
+        <div class="card-head"><img src="assets/icons/dashboard.svg" class="card-icon" alt="Pool"><div class="card-title">Live Pool</div></div>
+        <div class="card-value">$999,646,253</div>
+      </div>
+      <div class="card">
+        <div class="card-head"><img src="assets/icons/profile.svg" class="card-icon" alt="Champion"><div class="card-title">Highest Win</div></div>
+        <div class="card-value">$100,000</div>
+      </div>
+      <div class="card">
+        <div class="card-head"><img src="assets/icons/games.svg" class="card-icon" alt="Bet"><div class="card-title">Biggest Bet</div></div>
+        <div class="card-value">$20,000</div>
+      </div>
+    </div>
   </div>
 
   <div id="profile" class="view hidden">
-    <h1>Profile</h1>
-    <p>Placeholder content</p>
+    <div class="section-header page-header">
+      <div>
+        <h2>Profile</h2>
+        <p class="section-copy">Your neon account details and current status inside the pool casino.</p>
+      </div>
+      <button class="cta-btn">Edit Profile</button>
+    </div>
+    <div class="dashboard-cards">
+      <div class="card">
+        <div class="card-head"><img src="assets/icons/profile.svg" class="card-icon" alt="User"><div class="card-title">Username</div></div>
+        <div class="card-value">NeonPlayer</div>
+      </div>
+      <div class="card">
+        <div class="card-head"><img src="assets/icons/dashboard.svg" class="card-icon" alt="Balance"><div class="card-title">Wallet</div></div>
+        <div class="card-value">$5,480</div>
+      </div>
+      <div class="card">
+        <div class="card-head"><img src="assets/icons/leaderboard.svg" class="card-icon" alt="Wins"><div class="card-title">Wins</div></div>
+        <div class="card-value">18</div>
+      </div>
+      <div class="card">
+        <div class="card-head"><img src="assets/icons/games.svg" class="card-icon" alt="Level"><div class="card-title">VIP Tier</div></div>
+        <div class="card-value">Emerald</div>
+      </div>
+    </div>
   </div>
 </div>
 
