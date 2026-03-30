@@ -11,43 +11,52 @@
 <div class="navbar">
   <div class="logo">🎰 Pool Casino</div>
   <div class="menu">
-    <span>Home</span>
-    <span>Games</span>
-    <span>Leaderboard</span>
-    <span>Profile</span>
+    <button class="nav-btn">Dashboard</button>
+    <button class="nav-btn">Games</button>
+    <button class="nav-btn">Leaderboard</button>
+    <button class="nav-btn">Profile</button>
+  </div>
+  <div class="account">
+    <div class="pfp"></div>
+    <button id="loginBtn" class="nav-btn">Log In</button>
+    <button id="signupBtn" class="nav-btn">Sign Up</button>
   </div>
 </div>
 
 <h1>Roulette</h1>
 
-<div class="balance">
-  Balance: $<span id="balance">1000</span>
+<div class="main-content">
+  <!-- WHEEL LEFT -->
+  <div class="wheel-wrapper">
+    <div class="arrow">▲</div>
+    <canvas id="wheelCanvas" width="400" height="400"></canvas>
+  </div>
+
+  <!-- BET CONTROLS RIGHT -->
+  <div class="controls-panel">
+    <div class="balance">
+      Balance: $<span id="balance">1000</span>
+    </div>
+
+    <div class="bet-buttons">
+      <button class="bet-btn" data-color="red">Red</button>
+      <button class="bet-btn" data-color="black">Black</button>
+      <button class="bet-btn" data-color="green">Green</button>
+      <button class="bet-btn" data-color="even">Even</button>
+      <button class="bet-btn" data-color="odd">Odd</button>
+    </div>
+
+    <input id="betAmount" type="number" placeholder="Bet Amount" class="pop-input">
+
+    <button id="spinBtn">Spin</button>
+
+    <div class="result">
+      Result: <span id="result">-</span>
+    </div>
+
+    <div class="message" id="message"></div>
+  </div>
 </div>
-
-<!-- WHEEL -->
-<div class="wheel-wrapper">
-  <div class="arrow">▼</div>
-  <canvas id="wheelCanvas" width="300" height="300"></canvas>
-</div>
-
-<div class="bet-controls">
-  <input type="number" id="betAmount" placeholder="Bet amount">
-  
-  <select id="betType">
-    <option value="red">Red</option>
-    <option value="black">Black</option>
-    <option value="even">Even</option>
-    <option value="odd">Odd</option>
-  </select>
-
-  <button id="spinBtn" onclick="spin()">Spin</button>
-</div>
-
-<div class="result">
-  Result: <span id="result">-</span>
-</div>
-
-<div class="message" id="message"></div>
 
 <script src="script.js"></script>
 </body>

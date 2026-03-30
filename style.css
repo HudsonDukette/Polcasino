@@ -11,41 +11,68 @@ body {
 .navbar {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   padding: 15px 30px;
   background: #020617;
-  border-bottom: 1px solid #22c55e;
+  border-bottom: 2px solid #22c55e;
 }
 
 .logo {
   color: #22c55e;
   font-weight: bold;
   text-shadow: 0 0 10px #22c55e;
+  font-size: 20px;
 }
 
-.menu span {
-  margin-left: 20px;
+.menu, .account {
+  display: flex;
+  align-items: center;
+}
+
+.nav-btn {
+  margin-left: 15px;
+  padding: 8px 15px;
+  border-radius: 10px;
+  border: none;
+  background: linear-gradient(135deg, #22c55e, #4ade80);
+  color: black;
   cursor: pointer;
-  color: #38bdf8;
+  box-shadow: 0 0 10px #22c55e, 0 0 25px #22c55e;
+  transform: scale(1);
+  transition: all 0.15s ease;
+}
+
+.nav-btn:hover { transform: scale(1.1); box-shadow: 0 0 20px #22c55e, 0 0 40px #22c55e; }
+.nav-btn:active { transform: scale(0.95); box-shadow: 0 0 5px #22c55e; }
+
+/* Account PFP */
+.pfp {
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  background: #555;
+  margin-right: 10px;
 }
 
 /* TITLE */
 h1 {
   color: #22c55e;
   text-shadow: 0 0 10px #22c55e, 0 0 25px #22c55e;
+  margin-top: 10px;
 }
 
-/* BALANCE */
-.balance {
-  font-size: 24px;
-  margin: 20px;
-  color: #38bdf8;
+/* MAIN CONTENT */
+.main-content {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  margin-top: 20px;
 }
 
 /* WHEEL */
 .wheel-wrapper {
   position: relative;
-  width: 300px;
-  margin: 20px auto;
+  margin-right: 50px;
 }
 
 .arrow {
@@ -53,62 +80,71 @@ h1 {
   top: -20px;
   left: 50%;
   transform: translateX(-50%);
-  font-size: 24px;
+  font-size: 28px;
   color: #fff;
   text-shadow: 0 0 10px white, 0 0 20px white;
 }
 
-/* CONTROLS */
-input, select, button {
-  padding: 10px;
-  margin: 5px;
-  border-radius: 10px;
-  border: none;
+/* CONTROLS PANEL */
+.controls-panel {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-/* BUTTONS POP */
-button {
+.balance { font-size: 22px; margin-bottom: 10px; color: #38bdf8; }
+
+/* BET BUTTONS */
+.bet-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-bottom: 10px;
+}
+
+.bet-btn {
+  margin: 5px;
+  padding: 10px 15px;
+  border-radius: 10px;
+  border: none;
   background: linear-gradient(135deg, #22c55e, #4ade80);
   color: black;
-  box-shadow: 0 0 10px #22c55e, 0 0 25px #22c55e;
   cursor: pointer;
+  box-shadow: 0 0 10px #22c55e, 0 0 25px #22c55e;
   transform: scale(1);
   transition: all 0.15s ease;
 }
 
-button:hover {
-  transform: scale(1.08);
+.bet-btn:hover { transform: scale(1.1); box-shadow: 0 0 20px #22c55e, 0 0 40px #22c55e; }
+.bet-btn:active { transform: scale(0.95); box-shadow: 0 0 5px #22c55e; }
+
+/* SPIN BUTTON */
+#spinBtn {
+  margin-top: 10px;
+  width: 100px;
+}
+
+/* INPUT POP */
+.pop-input {
+  padding: 10px;
+  margin: 10px 0;
+  border-radius: 10px;
+  border: none;
+  background: #111;
+  color: #fff;
+  box-shadow: 0 0 10px #38bdf8, 0 0 20px #38bdf8;
+  transform: scale(1);
+  transition: all 0.15s ease;
+}
+
+.pop-input:focus {
+  transform: scale(1.05);
   box-shadow: 0 0 20px #22c55e, 0 0 40px #22c55e;
-}
-
-button:active {
-  transform: scale(0.95);
-  box-shadow: 0 0 5px #22c55e;
-}
-
-button:disabled {
-  background: #555;
-  cursor: not-allowed;
-  box-shadow: none;
+  outline: none;
 }
 
 /* RESULT / MESSAGE */
-.result {
-  font-size: 28px;
-  margin-top: 20px;
-}
-
-.message {
-  margin-top: 15px;
-  font-size: 22px;
-}
-
-.win {
-  color: #22c55e;
-  text-shadow: 0 0 10px #22c55e;
-}
-
-.lose {
-  color: #ef4444;
-  text-shadow: 0 0 10px #ef4444;
-}
+.result { font-size: 28px; margin-top: 15px; color: #fff; }
+.message { margin-top: 15px; font-size: 22px; }
+.win { color: #22c55e; text-shadow: 0 0 10px #22c55e; }
+.lose { color: #ef4444; text-shadow: 0 0 10px #ef4444; }
