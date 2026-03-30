@@ -27,7 +27,7 @@ function drawWheel() {
     ctx.beginPath();
     ctx.moveTo(150,150);
     ctx.arc(150,150,150,start,end);
-    
+
     if (numbers[i] === 0) {
       ctx.fillStyle = "green";
     } else if (redNumbers.includes(numbers[i])) {
@@ -42,6 +42,7 @@ function drawWheel() {
     ctx.translate(150,150);
     ctx.rotate(start + arc/2);
     ctx.fillStyle = "white";
+    ctx.font = "bold 14px Arial";
     ctx.fillText(numbers[i], 100, 5);
     ctx.restore();
   }
@@ -56,24 +57,27 @@ function spin() {
   const betType = document.getElementById("betType").value;
   const spinBtn = document.getElementById("spinBtn");
 
-  if (!betAmount || betAmount <= 0) return alert("Enter bet");
+  if (!betAmount || betAmount <= 0) return alert("Enter a valid bet amount");
   if (betAmount > balance) return alert("Not enough balance");
 
   spinning = true;
   spinBtn.disabled = true;
 
   const resultIndex = Math.floor(Math.random() * numbers.length);
-  const arc = 360 / numbers.length;
+  const segmentAngle = 360 / numbers.length;
 
-  const targetAngle = (360 * 5) + (resultIndex * arc);
+  // rotate wheel so the number ends up at the top under arrow
+  const targetDeg = (360 * 6) - (resultIndex * segmentAngle) - (segmentAngle / 2);
+  const startAngle = angle * 180 / Math.PI; // convert to degrees
   const duration = 3000;
   const start = performance.now();
 
   function animate(time) {
-    const progress = Math.min((time - start) / duration, 1);
+    const progress = Math.min((time - start)/duration, 1);
     const ease = 1 - Math.pow(1 - progress, 3);
 
-    angle = (targetAngle * ease) * Math.PI / 180;
+    const currentDeg = startAngle + (targetDeg - startAngle) * ease;
+    angle = currentDeg * Math.PI / 180;
 
     ctx.clearRect(0,0,300,300);
     drawWheel();
@@ -112,7 +116,6 @@ function finishSpin(index, betAmount, betType) {
   }
 
   document.getElementById("balance").textContent = balance;
-
   spinning = false;
   document.getElementById("spinBtn").disabled = false;
 }

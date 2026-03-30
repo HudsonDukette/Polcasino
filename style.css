@@ -1,3 +1,4 @@
+/* BODY */
 body {
   background: radial-gradient(circle at top, #020617, #000000);
   color: #e2e8f0;
@@ -27,13 +28,20 @@ body {
   color: #38bdf8;
 }
 
-/* Balance */
+/* TITLE */
+h1 {
+  color: #22c55e;
+  text-shadow: 0 0 10px #22c55e, 0 0 25px #22c55e;
+}
+
+/* BALANCE */
 .balance {
   font-size: 24px;
   margin: 20px;
+  color: #38bdf8;
 }
 
-/* Wheel */
+/* WHEEL */
 .wheel-wrapper {
   position: relative;
   width: 300px;
@@ -47,9 +55,10 @@ body {
   transform: translateX(-50%);
   font-size: 24px;
   color: #fff;
+  text-shadow: 0 0 10px white, 0 0 20px white;
 }
 
-/* Controls */
+/* CONTROLS */
 input, select, button {
   padding: 10px;
   margin: 5px;
@@ -57,18 +66,33 @@ input, select, button {
   border: none;
 }
 
+/* BUTTONS POP */
 button {
-  background: #22c55e;
+  background: linear-gradient(135deg, #22c55e, #4ade80);
   color: black;
-  box-shadow: 0 0 10px #22c55e;
+  box-shadow: 0 0 10px #22c55e, 0 0 25px #22c55e;
   cursor: pointer;
+  transform: scale(1);
+  transition: all 0.15s ease;
+}
+
+button:hover {
+  transform: scale(1.08);
+  box-shadow: 0 0 20px #22c55e, 0 0 40px #22c55e;
+}
+
+button:active {
+  transform: scale(0.95);
+  box-shadow: 0 0 5px #22c55e;
 }
 
 button:disabled {
   background: #555;
   cursor: not-allowed;
+  box-shadow: none;
 }
 
+/* RESULT / MESSAGE */
 .result {
   font-size: 28px;
   margin-top: 20px;
@@ -81,8 +105,10 @@ button:disabled {
 
 .win {
   color: #22c55e;
+  text-shadow: 0 0 10px #22c55e;
 }
 
 .lose {
   color: #ef4444;
+  text-shadow: 0 0 10px #ef4444;
 }
