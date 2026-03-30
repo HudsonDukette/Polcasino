@@ -3,32 +3,50 @@ body {
   color: #e2e8f0;
   font-family: Arial;
   text-align: center;
-  padding: 40px;
+  margin: 0;
 }
 
-/* Title */
-h1 {
+/* NAVBAR */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  padding: 15px 30px;
+  background: #020617;
+  border-bottom: 1px solid #22c55e;
+}
+
+.logo {
   color: #22c55e;
-  text-shadow: 0 0 10px #22c55e, 0 0 30px #22c55e;
+  font-weight: bold;
+  text-shadow: 0 0 10px #22c55e;
+}
+
+.menu span {
+  margin-left: 20px;
+  cursor: pointer;
+  color: #38bdf8;
 }
 
 /* Balance */
 .balance {
   font-size: 24px;
-  margin-bottom: 20px;
-  color: #38bdf8;
+  margin: 20px;
 }
 
 /* Wheel */
-.wheel-container {
-  margin: 30px auto;
-  width: 120px;
-  height: 120px;
+.wheel-wrapper {
+  position: relative;
+  width: 300px;
+  margin: 20px auto;
 }
 
-.wheel {
-  font-size: 80px;
-  transition: transform 3s cubic-bezier(.17,.67,.83,.67);
+.arrow {
+  position: absolute;
+  top: -20px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 24px;
+  color: #fff;
 }
 
 /* Controls */
@@ -39,27 +57,23 @@ input, select, button {
   border: none;
 }
 
-/* Neon button */
 button {
   background: #22c55e;
   color: black;
-  box-shadow: 0 0 10px #22c55e, 0 0 20px #22c55e;
+  box-shadow: 0 0 10px #22c55e;
   cursor: pointer;
 }
 
 button:disabled {
   background: #555;
-  box-shadow: none;
   cursor: not-allowed;
 }
 
-/* Result */
 .result {
   font-size: 28px;
   margin-top: 20px;
 }
 
-/* Win/Loss text */
 .message {
   margin-top: 15px;
   font-size: 22px;
@@ -67,10 +81,8 @@ button:disabled {
 
 .win {
   color: #22c55e;
-  text-shadow: 0 0 10px #22c55e;
 }
 
 .lose {
   color: #ef4444;
-  text-shadow: 0 0 10px #ef4444;
 }

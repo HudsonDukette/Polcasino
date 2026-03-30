@@ -7,14 +7,27 @@
 </head>
 <body>
 
-<h1>🎰 Roulette Casino</h1>
+<!-- NAVBAR -->
+<div class="navbar">
+  <div class="logo">🎰 Pool Casino</div>
+  <div class="menu">
+    <span>Home</span>
+    <span>Games</span>
+    <span>Leaderboard</span>
+    <span>Profile</span>
+  </div>
+</div>
+
+<h1>Roulette</h1>
 
 <div class="balance">
   Balance: $<span id="balance">1000</span>
 </div>
 
-<div class="wheel-container">
-  <div class="wheel" id="wheel">🎡</div>
+<!-- WHEEL -->
+<div class="wheel-wrapper">
+  <div class="arrow">▼</div>
+  <canvas id="wheelCanvas" width="300" height="300"></canvas>
 </div>
 
 <div class="bet-controls">
