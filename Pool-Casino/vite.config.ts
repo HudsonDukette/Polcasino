@@ -5,27 +5,17 @@ import path from "path";
 // Note: `@replit/vite-plugin-runtime-error-modal` can be mispackaged —
 // load it dynamically below so a bad package export doesn't break startup.
 
-const rawPort = process.env.PORT;
-
-if (!rawPort) {
-  throw new Error(
-    "PORT environment variable is required but was not provided.",
-  );
-}
-
-const port = Number(rawPort);
-
+// Provide safe defaults for build environments (e.g. Vercel) so the
+// config can be loaded during build-time even when dev-only env vars
+// like PORT or BASE_PATH are not set.
+let rawPort = process.env.PORT || process.env.VITE_PORT || "5173";
+let port = Number(rawPort);
 if (Number.isNaN(port) || port <= 0) {
-  throw new Error(`Invalid PORT value: "${rawPort}"`);
+  port = 5173;
 }
 
-const basePath = process.env.BASE_PATH;
-
-if (!basePath) {
-  throw new Error(
-    "BASE_PATH environment variable is required but was not provided.",
-  );
-}
+// Normalize BASE_PATH to match other scripts (build.js/serve.js).
+const basePath = (process.env.BASE_PATH || "/").replace(/\/\/+$/, "");
 
 export default defineConfig(async () => {
   const plugins: any[] = [react(), tailwindcss()];
